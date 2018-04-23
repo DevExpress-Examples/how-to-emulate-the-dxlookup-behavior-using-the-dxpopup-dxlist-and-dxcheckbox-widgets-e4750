@@ -1,0 +1,28 @@
+<div data-options="dxView : { name: 'Index', title: 'Home' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { dataSource: gamesDataSource, pullRefreshEnabled: true }">
+            <div data-options="dxTemplate : { name: 'item' } " >
+                <div class="list-item" data-bind="text: name"></div>
+                <div class="dx-field" data-bind="click: $root.changeOs">
+                    <div class="dx-field-label">OS</div>
+                    <div class="dx-field-value dx-lookup">
+                        <div class="dx-lookup-field" data-bind="text: os"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="osPopup" data-bind="dxPopup: {}">
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } " >
+                <div data-bind="dxButton: { text: 'Close', onClick: closeOsPopup }"></div>
+            </div>
+            <div data-options="dxTemplate : { name: 'content' } " >
+                <div data-bind="dxList: { dataSource: osDataSource, pullRefreshEnabled: true }">
+                    <div data-options="dxTemplate : { name: 'item' } " >
+                        <span class="list-item" data-bind="text: name"></span>
+                        <span class="list-item" data-bind="dxCheckBox: { value: selected }"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
