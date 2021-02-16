@@ -1,7 +1,3 @@
-<!-- default file list -->
-*Files to look at*:
-
-<!-- default file list end -->
 # How to emulate the dxLookup behavior using the dxPopup, dxList and dxCheckBox widgets
 
 
